@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  notes: 
+    build: ./
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - VITE_NAME=$VITE_NAME
+    ports:
+      - 8080:8080
+    stdin_open: true
+    tty: true
+      
